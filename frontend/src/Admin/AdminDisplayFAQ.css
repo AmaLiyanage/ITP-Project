@@ -1,0 +1,122 @@
+/* Full-page background */
+.admin-faq-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./image19.jpg') no-repeat center center/cover;
+    color: white;
+  }
+  
+  /* Glassmorphic form container */
+  .admin-faq-container {
+    width: 80%;
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Heading */
+  .admin-faq-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Table styling */
+  .faq-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .faq-table th,
+  .faq-table td {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .faq-table th {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .faq-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .faq-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Actions buttons */
+  .actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .update-button,
+  .delete-button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .update-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+  }
+  
+  .update-button:hover {
+    background-color: #45a049;
+  }
+  
+  .delete-button:hover {
+    background-color: #e53935;
+  }
+  
+  /* No FAQs message */
+  .no-faqs {
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .admin-faq-container {
+      width: 90%;
+      padding: 16px;
+    }
+  
+    .faq-table th,
+    .faq-table td {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .update-button,
+    .delete-button {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }
+  

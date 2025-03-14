@@ -1,0 +1,106 @@
+/* Full-page background */
+.add-faq-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./image19.jpg') no-repeat center center/cover;
+}
+
+/* Glassmorphic form container */
+.add-faq-container {
+    width: 280px; /* Decreased width */
+    padding: 18px; /* Reduced padding */
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures proper centering */
+}
+
+/* Headings */
+.add-faq-container h2 {
+    font-size: 20px; /* Slightly smaller */
+    margin-bottom: 12px;
+    color: #fff;
+    font-family: 'Arial', sans-serif; /* Consistent font */
+}
+
+/* Input fields */
+.add-faq-container input,
+.add-faq-container textarea {
+    width: 88%; /* Adjusted width */
+    padding: 8px; /* Slightly reduced padding */
+    margin: 5px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    font-size: 13px; /* Slightly smaller font */
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-family: 'Arial', sans-serif; /* Matching font */
+    resize: none; /* Prevents textarea from resizing */
+}
+
+.add-faq-container input::placeholder,
+.add-faq-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Buttons */
+.add-faq-container button {
+    width: 88%; /* Adjusted width */
+    padding: 8px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px; /* Reduced font size */
+    font-weight: normal; /* Matching input fields */
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-family: 'Arial', sans-serif; /* Matching font style */
+}
+
+.add-faq-container button:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Error message */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .add-faq-container {
+        width: 80%;
+        padding: 16px;
+    }
+
+    .add-faq-container input,
+    .add-faq-container button,
+    .add-faq-container textarea {
+        width: 100%;
+    }
+}
+
+/* Link to display all FAQs */
+.add-faq-link-text {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.faq-link {
+    color: #fff;
+    text-decoration: underline;
+}

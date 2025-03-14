@@ -1,0 +1,67 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Align items to edges */
+    align-items: center;
+    background: #1e1e1e; /* Dark background */
+    padding: 8px 40px; /* Reduce height */
+    width: 100%; /* Full width */
+    position: fixed; /* Fix at top */
+    top: 0; /* Stick to top */
+    left: 0;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Individual Link & Button Styles */
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 12px; /* Reduce height */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: #66ccff; /* Light blue hover */
+    color: black; /* Optional: Change text color */
+    border-radius: 20px; /* Increased border-radius for a rounded effect */
+    padding: 8px 14px; /* Slightly larger padding on hover */
+}
+
+/* Contact Button Styling */
+.contact-button {
+    background-color: #008cba; /* Blue color */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, border-radius 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #0077a3;
+    border-radius: 20px; /* Increased border-radius */
+}
+
+/* Logout Button */
+.logout-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: white;
+}
+
+.logout-button:hover {
+    background: #66ccff; /* Light blue hover */
+    color: black; /* Optional: Change text color */
+    border-radius: 20px; /* Increased border-radius */
+    padding: 8px 14px; /* Slightly larger padding on hover */
+}
