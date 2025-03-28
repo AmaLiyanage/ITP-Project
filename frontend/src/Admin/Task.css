@@ -1,0 +1,65 @@
+.task-id,
+.task-name,
+.task-description,
+.task-deadline,
+.task-status,
+.task-employee {
+  padding: 10px;
+  text-align: left;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-id {
+  width: 10%;
+}
+
+.task-name {
+  width: 20%;
+}
+
+.task-description {
+  width: 25%;
+}
+
+.task-deadline {
+  width: 15%;
+}
+
+.task-status {
+  width: 10%;
+}
+
+.task-employee {
+  width: 15%;
+}
+
+.task-actions {
+  width: 15%;
+  text-align: center;
+}
+
+.task-b1,
+.task-b2 {
+  padding: 6px 12px;
+  margin: 5px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.task-b1 {
+  background-color: #4CAF50;
+}
+
+.task-b1:hover {
+  background-color: #45a049;
+}
+
+.task-b2 {
+  background-color: #f44336;
+}
+
+.task-b2:hover {
+  background-color: #da190b;
+}

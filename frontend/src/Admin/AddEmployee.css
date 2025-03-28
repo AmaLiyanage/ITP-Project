@@ -1,0 +1,66 @@
+.div1 {
+    width: 80%;
+    margin: 50px auto;
+    margin-top: 80px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border-color: black;
+    border-style:outset;
+    
+    
+    
+}
+
+.addE {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+.addef {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}

@@ -1,0 +1,69 @@
+.EDT-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
+  .EDT-heading {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .EDT-label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .EDT-input,
+  .EDT-textarea,
+  .EDT-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .EDT-input:focus,
+  .EDT-textarea:focus,
+  .EDT-select:focus {
+    border-color: #4CAF50;
+  }
+  
+  .EDT-error {
+    color: #d9534f;
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }
+  
+  .EDT-submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .EDT-submit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .EDT-select:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+  }
+  

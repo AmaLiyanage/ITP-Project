@@ -1,0 +1,61 @@
+.empd-id,
+.empd-name,
+.empd-age,
+.empd-gender,
+.empd-designation,
+.empd-address,
+.empd-email,
+.empd-phone,
+.empd-nicNo,
+.empd-date_joined {
+  padding: 10px;
+  text-align: center;
+}
+
+.empd-id,
+.empd-name,
+.empd-age,
+.empd-gender,
+.empd-designation,
+.empd-address,
+.empd-email,
+.empd-phone,
+.empd-nicNo,
+.empd-date_joined {
+  border: 1px solid #ddd;
+}
+
+.empd-actions {
+  text-align: center;
+}
+
+.empd-b1,
+.empd-b2 {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 0 5px;
+  font-size: 14px;
+}
+
+.empd-b1 {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.empd-b1:hover {
+  background-color: #45a049;
+}
+
+.empd-b2 {
+  background-color: #f44336;
+  color: white;
+}
+
+.empd-b2:hover {
+  background-color: #e53935;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}

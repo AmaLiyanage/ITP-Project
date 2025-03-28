@@ -1,0 +1,49 @@
+.deleteE-div1 {
+    width: 80%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    border-color: black;
+    border-style: outset;
+    
+}
+
+.deleteE-h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.deleteE-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.deleteE-input,
+.deleteE-select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.deleteE-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff4747;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.deleteE-btn:hover {
+    background-color: #e63636;
+}

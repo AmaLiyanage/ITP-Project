@@ -1,0 +1,113 @@
+.TDD-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+  }
+  
+  .TDD-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .TDD-download-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .TDD-download-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .TDD-search-input {
+    padding: 8px;
+    margin-right: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .TDD-search-btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .TDD-search-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .TDD-search-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff0000;
+    margin-top: 20px;
+  }
+  
+  .TDD-no-tasks {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .TDD-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .TDD-th {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .TDD-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  .TDD-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .TDD-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .TDD-table a {
+    padding: 5px 10px;
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .TDD-table .b1 {
+    background-color: #4CAF50;
+  }
+  
+  .TDD-table .b2 {
+    background-color: #f44336;
+  }
+  
+  .TDD-table .b1:hover {
+    background-color: #45a049;
+  }
+  
+  .TDD-table .b2:hover {
+    background-color: #e53935;
+  }
+  

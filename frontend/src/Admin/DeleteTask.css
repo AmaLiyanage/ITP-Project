@@ -1,0 +1,60 @@
+.dtd-div1 {
+    margin: 20px;
+    margin-top: 200px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-color: black;
+    border-style: outset;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.dtd-h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dtd-task-details {
+    font-family: Arial, sans-serif;
+}
+
+.dtd-task-info {
+    font-size: 16px;
+    color: #555;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.dtd-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.dtd-delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    margin-left: 350px;
+    margin-right: 250px;
+}
+
+.dtd-delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.dtd-task-not-found {
+    font-size: 16px;
+    color: #888;
+    text-align: center;
+}
