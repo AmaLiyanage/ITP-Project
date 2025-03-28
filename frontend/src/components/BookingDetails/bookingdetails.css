@@ -1,0 +1,35 @@
+.container {
+    margin-top: 30px;
+}
+
+.heading {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.booking-table th, .booking-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.booking-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.booking-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.booking-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.header-image {
+    width: 100%;
+    height: 80vh;
+    border-radius: 8px;
+    
+}

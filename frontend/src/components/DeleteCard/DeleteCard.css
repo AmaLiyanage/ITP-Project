@@ -1,0 +1,15 @@
+
+.delete-card-button {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-card-button:hover {
+    background-color: #c82333;
+}
