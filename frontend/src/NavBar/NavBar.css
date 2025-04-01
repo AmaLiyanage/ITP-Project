@@ -1,0 +1,167 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 8px 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+/* Individual Link & Button Styles */
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    position: relative;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 50%,
+        #66ccff 50%,
+        #66ccff 100%
+    );
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 0.3s ease, 
+                color 0.3s ease,
+                transform 0.2s ease;
+}
+
+.nav-item:hover {
+    background-color: #66ccff;
+    color: black;
+    border-radius: 20px;
+    padding: 8px 14px;
+    background-position: 0 0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 204, 255, 0.2);
+}
+
+/* Contact Button Styling */
+.contact-button {
+    background-color: #008cba;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, border-radius 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #0077a3;
+    border-radius: 20px;
+}
+
+/* Logo text animation */
+.logo-text {
+    background: linear-gradient(90deg, #2563eb, #1d4ed8, #2563eb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    animation: gradientFlow 8s linear infinite;
+    transition: text-shadow 0.3s ease;
+}
+
+.logo-text:hover {
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Mobile menu adjustments */
+@media (max-width: 768px) {
+    .nav-link::after {
+        display: none;
+    }
+    
+    .nav-link:hover {
+        background: linear-gradient(45deg, #f0f9ff, #e0f2fe);
+        transform: translateX(8px);
+        box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        margin: 0.25rem 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: left;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Active Link State */
+.nav-link.active {
+    color: #2563eb;
+    font-weight: 600;
+    background: rgba(37, 99, 235, 0.1);
+}
+
+/* Smooth transitions */
+* {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
