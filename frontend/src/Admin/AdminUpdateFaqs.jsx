@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import './UpdateFaqs.css'; // Import the new CSS file
+import { toast } from "react-hot-toast"; 
+import './UpdateFaqs.css'; 
 
 const API_URL =
   import.meta.env.MODE === "development"
@@ -9,40 +10,83 @@ const API_URL =
     : "/api/faqs";
 
 function UpdateFaqs() {
-  const location = useLocation();
+  const location = useLocation();//access the current location object
   const navigate = useNavigate();
-  const faq = location.state?.faq || {}; // Get FAQ data from navigation state
+  const faq = location.state?.faq || {}; 
 
   const [question, setQuestion] = useState(faq.question || "");
   const [answer, setAnswer] = useState(faq.answer || "");
 
-  // ✅ Handle FAQ Update
+  // Handle FAQ Update
   const handleUpdate = async (e) => {
     e.preventDefault();
-    const confirmUpdate = window.confirm("Are you sure you want to update this FAQ?");
-    if (!confirmUpdate) return;
 
-    try {
-      await axios.put(`${API_URL}/${faq._id}`, { question, answer });
-      alert("FAQ updated successfully!");
-      navigate("/adminDisplayFAQ"); // Redirect to FAQ list
-    } catch (error) {
-      alert("Error updating FAQ");
-    }
+    // Show a custom toast confirmation dialog
+    const confirmationToast = toast.custom((t) => (
+      <div className={`toast-confirmation ${t.visible ? "visible" : ""}`}>
+        <p>Are you sure you want to update this FAQ?</p>
+        <div className="toast-actions">
+          <button
+            onClick={async () => {
+              toast.dismiss(t.id); // Dismiss the confirmation toast
+              try {
+                // Perform update request
+                await axios.put(`${API_URL}/${faq._id}`, { question, answer });
+                
+                // Success toast
+                toast.success("FAQ updated successfully!");
+                navigate("/adminDisplayFAQ"); 
+              } catch (error) {
+                // Error toast
+                toast.error("Error updating FAQ");
+              }
+            }}
+          >
+            Yes
+          </button>
+          <button
+            onClick={() => toast.dismiss(t.id)} 
+          >
+            No
+          </button>
+        </div>
+      </div>
+    ));
   };
 
-  // ✅ Handle FAQ Delete
+  //  Handle FAQ Delete
   const handleDelete = async () => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this FAQ?");
-    if (!confirmDelete) return;
-
-    try {
-      await axios.delete(`${API_URL}/${faq._id}`);
-      alert("FAQ deleted successfully!");
-      navigate("/adminDisplayFAQ"); // Redirect to FAQ list
-    } catch (error) {
-      alert("Error deleting FAQ");
-    }
+    // Show a custom toast confirmation dialog
+    const confirmationToast = toast.custom((t) => (
+      <div className={`toast-confirmation ${t.visible ? "visible" : ""}`}>
+        <p>Are you sure you want to delete this FAQ?</p>
+        <div className="toast-actions">
+          <button
+            onClick={async () => {
+              toast.dismiss(t.id); // Dismiss the confirmation toast
+              try {
+                // Perform delete request
+                await axios.delete(`${API_URL}/${faq._id}`);
+                
+                // Success toast
+                toast.success("FAQ deleted successfully!");
+                navigate("/adminDisplayFAQ"); 
+              } catch (error) {
+                // Error toast
+                toast.error("Error deleting FAQ");
+              }
+            }}
+          >
+            Yes
+          </button>
+          <button
+            onClick={() => toast.dismiss(t.id)} 
+          >
+            No
+          </button>
+        </div>
+      </div>
+    ));
   };
 
   return (

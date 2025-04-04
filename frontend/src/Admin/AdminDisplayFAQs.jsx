@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
-import './AdminDisplayFAQ.css'; // Import the new CSS file
+import { toast } from "react-hot-toast"; 
+import './AdminDisplayFAQ.css'; 
 
 const API_URL =
   import.meta.env.MODE === "development"
@@ -12,7 +13,7 @@ const API_URL =
 
 function AdminDisplayFAQs() {
   const [faqs, setFaqs] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);//whether the FAQ data is still being fetched from the server
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -28,27 +29,52 @@ function AdminDisplayFAQs() {
     } catch (error) {
       setError("Failed to fetch FAQs");
       setLoading(false);
+      toast.error("Error fetching FAQs."); // Show error toast on failure
     }
   };
 
-  const handleDelete = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this FAQ?");
-    if (!confirmDelete) return;
-
-    try {
-      await axios.delete(`${API_URL}/${id}`);
-      setFaqs(faqs.filter((faq) => faq._id !== id));
-      alert("FAQ deleted successfully!");
-    } catch (error) {
-      alert("Error deleting FAQ");
-    }
+ 
+  //  Handle FAQ Delete
+  const handleDelete = async () => {
+    // Show a  toast confirmation dialog
+    const confirmationToast = toast.custom((t) => (
+      <div className={`toast-confirmation ${t.visible ? "visible" : ""}`}>
+        <p>Are you sure you want to delete this FAQ?</p>
+        <div className="toast-actions">
+          <button
+            onClick={async () => {
+              toast.dismiss(t.id); // Dismiss the confirmation toast
+              try {
+                // Perform delete request
+                await axios.delete(`${API_URL}/${faq._id}`);
+                
+                // Success toast
+                toast.success("FAQ deleted successfully!");
+                navigate("/adminDisplayFAQ"); 
+              } catch (error) {
+                // Error toast
+                toast.error("Error deleting FAQ");
+              }
+            }}
+          >
+            Yes
+          </button>
+          <button
+            onClick={() => toast.dismiss(t.id)} 
+          >
+            No
+          </button>
+        </div>
+      </div>
+    ));
   };
 
   const handleUpdate = (faq) => {
     navigate("/adminupdateFAQ", { state: { faq } });
+    toast.info("Navigating to update FAQ..."); 
   };
 
-  // 🖨️ Function to Download FAQs as PDF
+  //  Function to Download FAQs as PDF
   const downloadPDF = () => {
     const doc = new jsPDF();
     doc.text("FAQs List", 14, 15);
@@ -60,6 +86,7 @@ function AdminDisplayFAQs() {
     });
 
     doc.save("FAQs_List.pdf");
+    toast.success("PDF downloaded successfully!"); 
   };
 
   if (loading) return <p>Loading FAQs...</p>;
@@ -70,7 +97,7 @@ function AdminDisplayFAQs() {
       <div className="admin-faq-container">
         <h2>Admin - Manage FAQs</h2>
 
-        {/* 📥 Download PDF Button */}
+        {/* Download PDF Button */}
         <div className="download-button-container">
           <button onClick={downloadPDF} className="download-button">
             Download PDF

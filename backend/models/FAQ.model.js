@@ -18,4 +18,4 @@ const faqSchema = new mongoose.Schema(
 
 const FAQ = mongoose.model("FAQ", faqSchema);
 
-export default FAQ; // ✅ Ensure we use export default for ESM
+export default FAQ; 

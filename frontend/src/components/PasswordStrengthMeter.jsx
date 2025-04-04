@@ -10,6 +10,7 @@ const PasswordCriteria = ({ password }) => {
 	];
 
 	return (
+		// Iterate through the criteria and display each rule with its current status (met or not met)
 		<div className='mt-2 space-y-1'>
 			{criteria.map((item) => (
 				<div key={item.label} className='flex items-center text-xs'>

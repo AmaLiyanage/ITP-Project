@@ -19,7 +19,7 @@ body {
   /* FAQ Image */
   .faq-image {
     width: 80%;
-    max-width: 600px; /* Max width for image */
+    max-width: 600px;
     margin-bottom: 30px; /* Spacing between image and FAQ content */
   }
   

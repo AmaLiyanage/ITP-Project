@@ -1,6 +1,6 @@
 import FAQ from "../models/FAQ.model.js";
 
-// ✅ Add FAQ
+
 export const addFAQ = async (req, res) => {
   try {
     const { question, answer } = req.body;
@@ -15,7 +15,7 @@ export const addFAQ = async (req, res) => {
   }
 };
 
-// ✅ Get all FAQs
+
 export const getFAQs = async (req, res) => {
   try {
     const faqs = await FAQ.find();
@@ -25,9 +25,10 @@ export const getFAQs = async (req, res) => {
   }
 };
 
-// ✅ Get FAQ by ID
+
 export const getFAQById = async (req, res) => {
   try {
+    // Find the FAQ by ID from the request parameters
     const faq = await FAQ.findById(req.params.id);
     if (!faq) {
       return res.status(404).json({ message: "FAQ not found" });
@@ -38,14 +39,14 @@ export const getFAQById = async (req, res) => {
   }
 };
 
-// ✅ Update FAQ
+
 export const updateFAQ = async (req, res) => {
   try {
     const { question, answer } = req.body;
     const updatedFAQ = await FAQ.findByIdAndUpdate(
       req.params.id,
       { question, answer },
-      { new: true }
+      { new: true }// Return the updated FAQ object
     );
     if (!updatedFAQ) {
       return res.status(404).json({ message: "FAQ not found" });
@@ -56,7 +57,7 @@ export const updateFAQ = async (req, res) => {
   }
 };
 
-// ✅ Delete FAQ
+
 export const deleteFAQ = async (req, res) => {
   try {
     const deletedFAQ = await FAQ.findByIdAndDelete(req.params.id);

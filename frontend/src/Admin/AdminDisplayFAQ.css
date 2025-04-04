@@ -69,12 +69,12 @@
 /* Increased button background size */
 .update-button,
 .delete-button {
-  padding: 12px 24px; /* Increased padding for better height */
-  min-width: 130px; /* Ensures buttons have a wider background */
-  text-align: center; /* Centers text */
-  font-size: 16px; /* Slightly larger text */
-  font-weight: bold; /* Makes text stand out */
-  border-radius: 8px; /* Rounded corners */
+  padding: 12px 24px; 
+  min-width: 130px; 
+  text-align: center;
+  font-size: 16px; 
+  font-weight: bold; 
+  border-radius: 8px; 
   cursor: pointer;
   transition: 0.3s ease-in-out;
   border: none;
@@ -122,8 +122,40 @@
 
   .update-button,
   .delete-button {
-      font-size: 14px; /* Adjusted for smaller screens */
+      font-size: 14px; 
       padding: 10px 20px;
-      min-width: 110px; /* Ensures consistent width on mobile */
+      min-width: 110px; 
   }
 }
+.toast-confirmation {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toast-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.toast-actions button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.toast-actions button:hover {
+  background-color: #0056b3;
+}
+
+.toast-actions button:focus {
+  outline: none;
+}
+

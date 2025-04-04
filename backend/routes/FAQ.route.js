@@ -3,10 +3,10 @@ import { addFAQ, getFAQs, getFAQById, updateFAQ, deleteFAQ } from "../controller
 
 const router = express.Router();
 
-router.post("/", addFAQ); // Add FAQ
-router.get("/", getFAQs); // Get all FAQs
-router.get("/:id", getFAQById); // Get FAQ by ID
-router.put("/:id", updateFAQ); // Update FAQ
-router.delete("/:id", deleteFAQ); // Delete FAQ
+router.post("/", addFAQ); 
+router.get("/", getFAQs); 
+router.get("/:id", getFAQById); 
+router.put("/:id", updateFAQ); 
+router.delete("/:id", deleteFAQ); 
 
 export default router;

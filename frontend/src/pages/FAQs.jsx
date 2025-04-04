@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./UserDisplayFandQ.css"; // Import the same CSS file
-import image13 from "./image13.png"; // Path to your image
+import "./UserDisplayFandQ.css"; 
+import image13 from "./image13.png"; 
 
 const API_URL =
   import.meta.env.MODE === "development"
@@ -18,7 +18,7 @@ function FAQs() {
     fetchFAQs();
   }, []);
 
-  // ✅ Fetch FAQs
+  //  Fetch FAQs
   const fetchFAQs = async () => {
     try {
       const response = await axios.get(API_URL);
@@ -39,7 +39,6 @@ function FAQs() {
 
   return (
     <div className="faq-page">
-      {/* Image above questions and answers */}
       <div className="faq-image">
         <img src={image13} alt="FAQ Illustration" />
       </div>

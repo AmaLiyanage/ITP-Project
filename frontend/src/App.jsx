@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import FloatingShape from "./components/FloatingShape";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
@@ -19,7 +18,7 @@ import AdminNav from "./NavBar/AdminNav";
 import AdminDisplayFAQs from "./Admin/AdminDisplayFAQs";
 import AdminUpdateFaqs from "./Admin/AdminUpdateFaqs";
 
-// ✅ Protect user routes (redirect to login if not authenticated)
+// Protect user routes (redirect to login if not authenticated)
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated } = useAuthStore();
   if (!isAuthenticated) {
@@ -28,7 +27,7 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-// ✅ Protect admin routes (redirect to admin login if not authenticated)
+//  Protect admin routes (redirect to admin login if not authenticated)
 const AdminProtectedRoute = ({ children }) => {
   const { isAuthenticated } = useAuthStore();
   if (!isAuthenticated) {
@@ -39,44 +38,44 @@ const AdminProtectedRoute = ({ children }) => {
 
 function App() {
   const { isCheckingAuth, checkAuth, isAuthenticated } = useAuthStore();
-  const location = useLocation(); // ✅ Get current route
+  const location = useLocation(); // Get current route
 
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
 
-  // ✅ Show loading spinner if authentication is still being checked
+  // Show loading spinner if authentication is still being checked
   if (isCheckingAuth) return <LoadingSpinner />;
 
   return (
     <div>
-      {/* ✅ Show AdminNav for admin routes, UserNav for user routes */}
+      {/* Show AdminNav for admin routes, UserNav for user routes */}
       {location.pathname.startsWith("/admin") ? <AdminNav /> : <UserNav />}
 
       <Routes>
-        {/* ✅ User Signup & Login */}
+        {/*  User Signup & Login */}
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
 
-        {/* ✅ Admin Signup & Login */}
+        {/*  Admin Signup & Login */}
         <Route path="/adminsignup" element={<AdminSignUp />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
 
-        {/* ✅ User Dashboard (protected) */}
+        {/* User Dashboard (protected) */}
         <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
         <Route path="/vehicle" element={<ProtectedRoute><Vehicle /></ProtectedRoute>} />
         <Route path="/faqs" element={<ProtectedRoute><FAQs /></ProtectedRoute>} />
         
-        {/* ✅ Admin Dashboard (protected) */}
+        {/*  Admin Dashboard (protected) */}
         <Route path="/admindashboard" element={<AdminProtectedRoute><AdminDashboard /></AdminProtectedRoute>} />
         <Route path="/adminaddFAQs" element={<AdminProtectedRoute><AdminAddFAQ /></AdminProtectedRoute>} />
         <Route path="/adminDisplayFAQ" element={<AdminProtectedRoute><AdminDisplayFAQs /></AdminProtectedRoute>} />
          <Route path="/adminupdateFAQ" element={<AdminProtectedRoute><AdminUpdateFaqs /></AdminProtectedRoute>} />
 
-        {/* ✅ Profile Update Page (only for users) */}
+        {/*  Profile Update Page (only for users) */}
         <Route path="/profileUpdate" element={<ProtectedRoute><UpdateProfile /></ProtectedRoute>} />
 
-        {/* ✅ Fallback for unknown routes */}
+        {/*  Fallback for unknown routes */}
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
 

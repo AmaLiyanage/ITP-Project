@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
-import "./AddFAQ.css"; // Import CSS
+import { Link, useNavigate } from "react-router-dom";
+import "./AddFAQ.css"; 
 
 function AddFAQ() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate(); // Initialize navigate function
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ function AddFAQ() {
         setQuestion("");
         setAnswer("");
 
-        // Navigate to the FAQ list page after success
+        
         navigate("/adminDisplayFAQ");
       }
     } catch (error) {

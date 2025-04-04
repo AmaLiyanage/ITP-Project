@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Lock, Loader } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom"; 
 import Input from "../components/Input";
 import { useAuthStore } from "../store/authStore";
 import FloatingShape from "../components/FloatingShape";
@@ -74,7 +74,7 @@ const LoginPage = () => {
       <div className="px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center">
         <p className="text-sm text-gray-400">
           Don't have an account?{" "}
-          <Link to="/signup" className="text-green-400 hover:underline">
+          <Link to="/adminsignup" className="text-green-400 hover:underline">
             Sign up
           </Link>
         </p>

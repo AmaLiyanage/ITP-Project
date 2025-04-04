@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios"; 
 import FloatingShape from "../components/FloatingShape";
+import { toast } from "react-hot-toast"; // Import toast
 
 function Profile() {
   const { user, updateUser, logout } = useAuthStore();
@@ -11,7 +12,7 @@ function Profile() {
 
   const [name, setName] = useState(user?.name || "");
   const [email, setEmail] = useState(user?.email || "");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("••••••••••"); 
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -25,47 +26,77 @@ function Profile() {
     e.preventDefault();
     setLoading(true);  // Show loading indicator
 
-    const confirmUpdate = window.confirm("Are you sure you want to update your profile?");
-    if (!confirmUpdate) return;
-
-    try {
-      const updatedData = { name, email, password: password || undefined };
-      await updateUser(updatedData);
-      alert("Profile updated successfully!");
-      setTimeout(() => navigate("/dashboard"), 1000);
-    } catch (error) {
-      console.error("Error updating profile:", error);
-      alert("Error updating profile");
-    } finally {
-      setLoading(false);  // Hide loading indicator
-    }
+    const confirmUpdateToast = toast.custom((t) => (
+      <div className={`toast-confirmation ${t.visible ? "visible" : ""}`}>
+        <p>Are you sure you want to update your profile?</p>
+        <div className="toast-actions">
+          <button
+            onClick={async () => {
+              toast.dismiss(t.id); // Dismiss the confirmation toast
+              try {
+                const updatedData = { name, email, password: password === "••••••••••" ? undefined : password };  
+                await updateUser(updatedData);
+                toast.success("Profile updated successfully!");
+                setTimeout(() => navigate("/dashboard"), 1000);
+              } catch (error) {
+                console.error("Error updating profile:", error);
+                toast.error("Error updating profile");
+              } finally {
+                setLoading(false);  // Hide loading indicator
+              }
+            }}
+          >
+            Yes
+          </button>
+          <button
+            onClick={() => toast.dismiss(t.id)} 
+          >
+            No
+          </button>
+        </div>
+      </div>
+    ));
   };
 
   const handleDeleteProfile = async () => {
-    const confirmDelete = window.confirm(" Are you sure you want to delete your account? This action is irreversible!");
-    if (!confirmDelete) return;
-
-    try {
-      // Send delete request with credentials
-      const response = await axios.delete("http://localhost:5000/api/auth/delete-profile", { withCredentials: true });
-      console.log(response.data);
-      alert("Profile deleted successfully!");
-      logout(); // Logout the user after profile deletion
-      navigate("/signup"); // Redirect to the signup page
-    } catch (error) {
-      console.error("Error deleting profile:", error);
-      alert("Error deleting profile. Please try again.");
-    }
+    const confirmDeleteToast = toast.custom((t) => (
+      <div className={`toast-confirmation ${t.visible ? "visible" : ""}`}>
+        <p>Are you sure you want to delete your account? This action is irreversible!</p>
+        <div className="toast-actions">
+          <button
+            onClick={async () => {
+              toast.dismiss(t.id); // Dismiss the confirmation toast
+              try {
+                const response = await axios.delete("http://localhost:5000/api/auth/delete-profile", { withCredentials: true });
+                console.log(response.data);
+                toast.success("Profile deleted successfully!");
+                logout(); 
+                navigate("/signup");
+              } catch (error) {
+                console.error("Error deleting profile:", error);
+                toast.error("Error deleting profile. Please try again.");
+              }
+            }}
+          >
+            Yes
+          </button>
+          <button
+            onClick={() => toast.dismiss(t.id)} 
+          >
+            No
+          </button>
+        </div>
+      </div>
+    ));
   };
 
   return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900 flex items-center justify-center relative overflow-hidden">
+      {/* Floating Shapes for UI */}
+      <FloatingShape color="bg-green-500" size="w-64 h-64" top="-5%" left="10%" delay={0} />
+      <FloatingShape color="bg-emerald-500" size="w-48 h-48" top="70%" left="80%" delay={5} />
+      <FloatingShape color="bg-lime-500" size="w-32 h-32" top="40%" left="-10%" delay={2} />
     
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-green-900 to-emerald-900 flex items-center justify-center relative overflow-hidden">
-        {/* ✅ Floating Shapes for UI */}
-        <FloatingShape color="bg-green-500" size="w-64 h-64" top="-5%" left="10%" delay={0} />
-        <FloatingShape color="bg-emerald-500" size="w-48 h-48" top="70%" left="80%" delay={5} />
-        <FloatingShape color="bg-lime-500" size="w-32 h-32" top="40%" left="-10%" delay={2} />
-      
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -115,7 +146,7 @@ function Profile() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="bg-transparent text-white border-b-2 border-gray-500 outline-none w-full"
-                  placeholder="Leave blank to keep current password"
+                  placeholder="Enter new password"
                 />
               </div>
 
@@ -132,7 +163,7 @@ function Profile() {
                 </motion.button>
               </div>
 
-              {/*  Delete Profile Button */}
+              {/* Delete Profile Button */}
               <div className="mt-4">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -151,8 +182,6 @@ function Profile() {
         </motion.div>
       </motion.div>
     </div>
-   
-   
   );
 }
 
