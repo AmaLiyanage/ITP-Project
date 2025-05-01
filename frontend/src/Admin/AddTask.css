@@ -1,0 +1,122 @@
+.task-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border-style: outset;
+    border-color: black;
+    border-width: 3px;
+}
+
+.task-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.task-textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.task-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.select-option {
+    font-size: 1rem;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+}
+
+.submit-button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* The form now uses Tailwind CSS classes, so we only need minimal custom CSS */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+/* Animation classes */
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Focus styles */
+.focus\:ring-1:focus {
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5);
+}
+
+.focus\:ring-2:focus {
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Transition styles */
+.transition {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Hover styles */
+.hover\:bg-gray-50:hover {
+    background-color: rgba(249, 250, 251, 1);
+}
+
+.hover\:bg-blue-700:hover {
+    background-color: rgba(29, 78, 216, 1);
+}
+
+/* Disabled styles */
+.disabled\:opacity-50:disabled {
+    opacity: 0.5;
+}

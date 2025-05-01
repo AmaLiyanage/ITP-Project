@@ -1,0 +1,127 @@
+/* Set background color */
+body {
+    background: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Full page wrapper */
+  .faq-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures content is centered vertically */
+    padding: 20px;
+  }
+  
+  /* FAQ Image */
+  .faq-image {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 30px; /* Spacing between image and FAQ content */
+  }
+  
+  .faq-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* FAQ container (for questions and answers) */
+  .faq-container {
+    width: 100%;
+    max-width: 800px; /* Limits the width of the FAQ content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between question items */
+  }
+  
+  /* FAQ Title */
+  .faq-content h2 {
+    font-size: 26px; /* Increased font size */
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* FAQ List */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased spacing between FAQ items */
+    width: 100%;
+  }
+  
+  /* FAQ Item */
+  .faq-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%; /* Full width */
+  }
+  
+  /* FAQ Question */
+  .faq-question {
+    background-color: #f7f7f7;
+    color: #6200ea; /* Purple text */
+    padding: 20px; /* Increased padding */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px; /* Increased font size */
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    background-color: #e7e7e7;
+  }
+  
+  /* Active (clicked) FAQ Question */
+  .faq-question.active {
+    color: #d81b60; /* Red text when active */
+  }
+  
+  /* Toggle Icon */
+  .faq-toggle {
+    font-size: 22px; /* Increased size */
+  }
+  
+  /* FAQ Answer */
+  .faq-answer {
+    padding: 20px;
+    background-color: #fff;
+    color: #000; /* Black text for answer */
+    border-top: 1px solid #ddd;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .faq-page {
+      padding: 10px;
+    }
+  
+    .faq-image {
+      width: 90%;
+    }
+  
+    .faq-content h2 {
+      font-size: 22px;
+    }
+  
+    .faq-question {
+      font-size: 16px;
+    }
+  
+    .faq-answer {
+      font-size: 14px;
+    }
+  }
+  

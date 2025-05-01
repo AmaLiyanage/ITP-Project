@@ -1,0 +1,160 @@
+/* Full-page background */
+.update-faq-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./image19.jpg') no-repeat center center/cover;
+    color: white;
+  }
+  
+  /* Glassmorphic form container */
+  .update-faq-container {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Heading */
+  .update-faq-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Input fields */
+  .update-faq-container input,
+  .update-faq-container textarea {
+    width: 88%; 
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    resize: none; /* Prevents textarea from resizing */
+  }
+  
+  .update-faq-container input::placeholder,
+  .update-faq-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Button group */
+  .button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  /* Buttons */
+  .update-button,
+  .delete-button,
+  .cancel-button {
+    width: 30%;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .update-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+  }
+  
+  .cancel-button {
+    background-color: #888;
+    color: white;
+    border: none;
+  }
+  
+  .update-button:hover {
+    background-color: #45a049;
+  }
+  
+  .delete-button:hover {
+    background-color: #e53935;
+  }
+  
+  .cancel-button:hover {
+    background-color: #777;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .update-faq-container {
+      width: 90%;
+      padding: 16px;
+    }
+  
+    .update-faq-container input,
+    .update-faq-container textarea {
+      width: 100%;
+      font-size: 13px;
+    }
+  
+    .button-group {
+      flex-direction: column;
+    }
+  
+    .update-button,
+    .delete-button,
+    .cancel-button {
+      width: 100%;
+    }
+  }
+  .toast-confirmation {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .toast-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .toast-actions button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .toast-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  .toast-actions button:focus {
+    outline: none;
+  }
+  

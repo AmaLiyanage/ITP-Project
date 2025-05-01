@@ -1,0 +1,150 @@
+.EDD-Div2 {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 5%;
+  }
+  
+  .EDD-h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .EDD-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .EDD-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .EDD-search-input {
+    padding: 6px;
+  margin-right: 10px;
+  width: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  }
+  
+  .EDD-search-btn {
+    padding: 8px 20px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  .EDD-search-btn:hover {
+    background-color: #0b7dda;
+  }
+  
+  .EDD-SearchBar {
+    text-align: center;
+    margin-top: 20px;
+
+  }
+  
+  .EDD-no-employees {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff4d4d;
+  }
+  
+  .EDD-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .EDD-th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .EDD-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .EDD-table td a {
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .EDD-table td a.EDD-b1 {
+    background-color: #4CAF50;
+    margin-right: 10px;
+  }
+  
+  .EDD-table td a.EDD-b1:hover {
+    background-color: #45a049;
+  }
+  
+  .EDD-table td a.EDD-b2 {
+    background-color: #f44336;
+  }
+  
+  .EDD-table td a.EDD-b2:hover {
+    background-color: #e53935;
+  }
+  
+  /* The form now uses Tailwind CSS classes, so we only need minimal custom CSS */
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  
+  /* Animation classes */
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Focus styles */
+  .focus\:ring-1:focus {
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5);
+  }
+  
+  .focus\:ring-2:focus {
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  }
+  
+  /* Transition styles */
+  .transition {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  /* Hover styles */
+  .hover\:bg-gray-50:hover {
+    background-color: rgba(249, 250, 251, 1);
+  }
+  
+  .hover\:bg-blue-700:hover {
+    background-color: rgba(29, 78, 216, 1);
+  }
+  
+  /* Disabled styles */
+  .disabled\:opacity-50:disabled {
+    opacity: 0.5;
+  }
+  

@@ -1,0 +1,115 @@
+.div1 {
+    width: 80%;
+    margin: 50px auto;
+    margin-top: 80px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border-color: black;
+    border-style:outset;
+    
+    
+    
+}
+
+.addE {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+.addef {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* The form now uses Tailwind CSS classes, so we only need minimal custom CSS */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+/* Animation classes */
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Focus styles */
+.focus\:ring-1:focus {
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5);
+}
+
+.focus\:ring-2:focus {
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Transition styles */
+.transition {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Hover styles */
+.hover\:bg-gray-50:hover {
+    background-color: rgba(249, 250, 251, 1);
+}
+
+.hover\:bg-blue-700:hover {
+    background-color: rgba(29, 78, 216, 1);
+}
+
+/* Disabled styles */
+.disabled\:opacity-50:disabled {
+    opacity: 0.5;
+}
